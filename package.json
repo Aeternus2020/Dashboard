@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "compile:pug": "node compilePug.js",
+    "build:pug": "npm run compile:pug && pug --basedir . index.pug -pretty -w"
+  },
+  "dependencies": {
+    "pug": "^3.0.3",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "name": "dashboard",
+  "version": "1.0.0",
+  "main": "compilePug.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

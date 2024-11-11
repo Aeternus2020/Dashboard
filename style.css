@@ -1,0 +1,241 @@
+body {
+    color: #292D32;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    background-color: #fafbff;
+    margin: 0;
+    font: 500 14px/1.5 "Poppins", sans-serif;
+}
+
+/*header*/
+.header__modal-wrapper {
+    background-color: #fafbff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100vw;
+}
+
+.header__modal {
+    margin: auto;
+    width: 280px;
+    height: 200px;
+    position: relative;
+    top: 10%;
+    background-color: white;
+    border: 1px solid #efc1ef;
+    border-radius: 10%;
+}
+
+.header__modal-title {
+    margin: 10px 10px 15px;
+}
+
+.header__modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__modal-input {
+    margin: 15px 10px;
+    width: 65%;
+}
+
+.header__modal-close {
+    position: relative;
+    left: 40%;
+    margin: 10px 0 10px 10px;
+}
+
+.header__user-name {
+    font-size: 24px;
+    margin-right: auto;
+}
+
+.header__user-name-text {
+    color: #292D32;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.header__user-name-text:hover {
+    color: #0073e6;
+    text-decoration: underline;
+}
+
+/*
+side menu*/
+.side-menu {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 18px;
+    width: 306px;
+    padding: 36px 26px 75px 28px;
+    box-sizing: border-box;
+}
+
+.side-menu__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 43px;
+}
+
+.side-menu__title-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.side-menu__title-text h2 {
+    font-weight: 600;
+    font-size: 26px;
+    margin: 0;
+}
+
+.side-menu__title-text span {
+    font-size: 10px;
+    color: #838383;
+    margin: 8px 0 0 4px;
+}
+
+.side-menu__list-text-first {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #9197B3;
+    margin-right: auto;
+    margin-left: 14px;
+}
+
+.side-menu__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu__list-item {
+    width: 230px;
+    height: 24px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+.side-menu__list-item.active {
+    color: #ffffff;
+    background-color: #5932EA;
+}
+
+.side-menu__list-item.active a {
+    color: #ffffff;
+}
+
+.side-menu__list-item.active a img {
+    filter: brightness(0) saturate(100%) invert(1) grayscale(100%) contrast(100%);
+}
+
+.side-menu__list-item a {
+    display: flex;
+    text-decoration: none;
+    color: #9197B3;
+    gap: 14px;
+    align-items: center;
+    width: 100%;
+}
+
+.side-menu__list-arrow {
+    margin-left: auto;
+}
+
+.side-menu__user {
+    display: flex;
+    gap: 30px;
+    width: 155px;
+    height: 42px;
+    margin-top: auto;
+}
+
+.side-menu__user-position {
+    font-weight: 400;
+    font-size: 12px;
+    color: #757575;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/*
+main*/
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 41px 71px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*
+context*/
+#content {
+    width: 100%;
+    max-width: 970px;
+    height: auto;
+    background-color: #ffffff;
+    margin-top: 41px;
+    border-radius: 30px;
+    padding: 38px 30px;
+}
+
+/*customer page */
+.customers-page__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.customers-page__title-text-heading {
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0;
+}
+
+.customers-page__title-text-button {
+    font-weight: 400;
+    color: #16C098;
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 0;
+}
+.customers-page__title-search {
+    font-weight: 400;
+    font-size: 12px;
+    color: #B5B7C0;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 206px;
+    height: 28px;
+    background-color: #F9FBFF;
+    padding: 5px;
+}
+
+.customers-page__title-search svg {
+    margin-right: 5px;
+}
+
+.customers-page__title-search-input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    background-color: #F9FBFF;
+    width: 176px;
+}
