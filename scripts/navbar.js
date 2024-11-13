@@ -72,10 +72,6 @@ function formHeaderEdit() {
 // Open modal window on page load
 window.addEventListener('load', formHeaderEdit);
 
-// Add click event to userName span to reopen the modal window
-userName.addEventListener('click', formHeaderEdit);
-
-
 // menuItems
 const menuItems = [
     { image: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#9197B3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.28 13.61C15.15 14.74 13.53 15.09 12.1 14.64L9.51001 17.22C9.33001 17.41 8.96001 17.53 8.69001 17.49L7.49001 17.33C7.09001 17.28 6.73001 16.9 6.67001 16.51L6.51001 15.31C6.47001 15.05 6.60001 14.68 6.78001 14.49L9.36001 11.91C8.92001 10.48 9.26001 8.86001 10.39 7.73001C12.01 6.11001 14.65 6.11001 16.28 7.73001C17.9 9.34001 17.9 11.98 16.28 13.61Z" stroke="#9197B3" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.45 16.28L9.59998 15.42" stroke="#9197B3" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.3945 10.7H13.4035" stroke="#9197B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>', name: 'Dashboard' },
@@ -103,21 +99,21 @@ menuItems.forEach(item => {
         span.textContent = item.name;
 
         // Create <img> for the icon
-        const img = document.createElement('img');
-        img.classList.add('side-menu__list-icon');
-        img.alt = item.name;
+        const imgSvg = document.createElement('img');
+        imgSvg.classList.add('side-menu__list-icon');
+        imgSvg.alt = item.name;
 
         // Check if there is an image, and if so, insert it
         if (item.image) {
             if (item.image.includes('<svg')) {
-                img.src = `data:image/svg+xml;base64,${btoa(item.image)}`;
+                imgSvg.src = `data:image/svg+xml;base64,${btoa(item.image)}`;
             } else {
-                img.src = item.image;
+                imgSvg.src = item.image;
             }
         }
 
         // Append elements to <li>
-        li.appendChild(img);
+        li.appendChild(imgSvg);
         li.appendChild(span);
 
     } else {
@@ -183,14 +179,37 @@ function loadPage(page) {
             })
             .then(html => {
                 content.innerHTML = html;
+                if (page === 'customers') {
+                        loadCustomersScript();
+                    }
+
             })
             .catch(error => {
-                content.innerHTML = '<div><h2>Not Found</h2><p>Page not found.</p></div>';
+                content.innerHTML = '<div class="page__not-found"><h2>Not Found</h2><p>Page not found.</p></div>';
                 console.error('There was a problem with the fetch operation:', error);
             });
     } else {
-        content.innerHTML = '<div><h2>Not Found</h2><p>Page not found.</p></div>';
+        content.innerHTML = '<div class="page__not-found"><h2>Not Found</h2><p>Page not found.</p></div>';
     }
+}
+
+function loadCustomersScript() {
+    // Find the script element with the specified src
+    const existingScript = document.querySelector('script[src="/scripts/customers.js"]');
+
+    // If the script exists, remove it
+    if (existingScript) {
+        existingScript.remove();
+    }
+
+    // Create a new script element and append it to the body
+    const script = document.createElement('script');
+    script.src = '/scripts/customers.js';
+    script.onload = () => {};
+    script.onerror = (error) => {
+        console.error('Script load error: ', error);
+    };
+    document.body.appendChild(script);
 }
 
 // Function to set the active link
@@ -206,7 +225,6 @@ function setActiveLink() {
         activeItem.closest('.side-menu__list-item').classList.add('active');
     }
 }
-
 // Add event listeners to all links
 links.forEach(link => {
     link.addEventListener('click', function(event) {
@@ -231,3 +249,7 @@ sideMenuTitleImage.innerHTML = '<svg width="37" height="37" viewBox="0 0 37 37" 
 // Set the user's name in the span
 const userNameSpan = document.querySelector('.side-menu__user-name');
 userNameSpan.innerHTML = user; // Set the user's name dynamically
+
+const userNameNavbar = document.querySelector('.side-menu__user');
+// Add click event to userName span to reopen the modal window
+userNameNavbar.addEventListener('click', formHeaderEdit);

@@ -7,5 +7,3 @@ const html = pug.renderFile('pages/customers.pug', {
 });
 
 fs.writeFileSync('pages/customers.html', html);
-
-console.log('Pug был успешно скомпилирован в HTML!');

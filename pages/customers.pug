@@ -1,15 +1,22 @@
-div.customers-page
-    div.customers-page__title
-        div.customers-page__title-text
-            h4.customers-page__title-text-heading All Customers
-            button.customers-page__title-text-button Active Members
-        div.customers-page__title-search
+div.customers
+    div.customers__title
+        div.customers__title-buttons
+            button.customers__title-buttons-all All Customers
+            button.customers__title-buttons-active Active Members
+        div.customers__title-search
             svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
                 path(d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                 path(d="M21 21L16.65 16.65" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-            input.customers-page__title-search-input(type="text" placeholder="Search")
-    div.customers-page__table-header
-    div.customers-page__table-body
-    div.customers-page__pagination
-        span.customers-page__pagination-text
-        div.customers-page__pagination-buttons
+            input.customers__title-search-input(type="text" placeholder="Search" maxlength="20")
+    div.customers__cards-header
+        div.customers__header-column.name Customer Name
+        div.customers__header-column.company Company
+        div.customers__header-column.phone Phone Number
+        div.customers__header-column.email Email
+        div.customers__header-column.country Country
+        div.customers__header-column.status Status
+    br
+    div.customers__cards
+    div.customers__pagination
+        span.customers__pagination-text
+        div.customers__pagination-buttons

@@ -1,10 +1,9 @@
 doctype html
-html(lang='en')
+html
     head
         title Dashboard
         link(rel='stylesheet', href='style.css')
     body
         include components/navbar
         include components/main
-        script(type="module" src="navbar.js")
-            script(type="module" src="data.js")
+        script(src="/scripts/navbar.js")
