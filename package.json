@@ -1,7 +1,7 @@
 {
   "scripts": {
     "compile:pug": "node compilePug.js",
-    "build:pug": "npm run compile:pug && pug --basedir . index.pug -pretty -w"
+    "build:pug": "npm run compile:pug && pug --basedir . index.pug -pretty"
   },
   "dependencies": {
     "pug": "^3.0.3",
