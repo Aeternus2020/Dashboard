@@ -67,7 +67,7 @@ side menu*/
     flex-direction: column;
     height: 100vh;
     gap: 18px;
-    width: 306px;
+    width: 50px;
     padding: 36px 5px;
     box-sizing: border-box;
 }
@@ -248,7 +248,8 @@ context*/
     color: #B5B7C0;
     display: flex;
     justify-content: flex-start;
-    padding: 35px 30px 20px 30px;
+    padding: 30px 10px;
+    box-sizing: border-box;
 }
 
 .customers br {
@@ -413,22 +414,35 @@ context*/
     justify-content: center;
 }
 
-/*from 769px to 1024px*/
+
+@media (min-width: 452px) {
+    .company {
+        display: block;
+    }
+    .country {
+        display: block;
+    }
+    .side-menu {
+        width: 80px;
+    }
+    .side-menu__list-arrow {
+        display: block;
+    }
+}
+
 @media (min-width: 769px) {
     body {
         font-size: 14px;
     }
     .side-menu {
         padding: 36px 26px 75px 28px;
+        width: 250px;
     }
     .side-menu__list-text {
         display: inline;
     }
     .side-menu__title-text {
         display: inline;
-    }
-    .side-menu__list-item {
-        width: 230px;
     }
     .side-menu__list-text-first {
         display: flex;
@@ -444,9 +458,6 @@ context*/
         cursor: pointer;
         transition: color 0.3s ease;
     }
-    .side-menu__list-arrow {
-        display: block;
-    }
     .main {
         margin: 41px 71px;
     }
@@ -458,20 +469,14 @@ context*/
         flex-direction: row;
         gap: 0;
     }
-    .company {
-        max-width: 130px;
-        display: none;
-    }
     .phone {
-        display: block;
-    }
-    .email {
         display: block;
     }
     .country {
         display: block;
     }
     .customers__pagination {
+        flex-direction: row;
         padding: 0 30px;
         justify-content: space-between;
     }
@@ -480,11 +485,22 @@ context*/
         height: 24px;
         border-radius: 4px;
     }
+    .customers__cards-header {
+        padding: 35px 30px 20px 30px;
+    }
 }
 
-/*from 1025px to 1440px*/
 @media (min-width: 1025px) {
-    /* Стили для ноутбуков и десктопов */
+    .email {
+        display: block;
+    }
+    .side-menu {
+        padding: 36px 26px 75px 28px;
+        width: 306px;
+    }
+    .side-menu__list-item {
+        width: 230px;
+    }
 }
 
 /*from 1440px*/
