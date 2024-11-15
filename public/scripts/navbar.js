@@ -204,7 +204,7 @@ function loadCustomersScript() {
 
     // Create a new script element and append it to the body
     const script = document.createElement('script');
-    script.src = '/scripts/customers.js';
+    script.src = './scripts/customers.js';
     script.onload = () => {};
     script.onerror = (error) => {
         console.error('Script load error: ', error);

@@ -1,7 +1,9 @@
 {
   "scripts": {
-    "compile:pug": "node compilePug.js",
-    "build:pug": "npm run compile:pug && pug --basedir . index.pug -pretty"
+    "compile:pug": "pug src -o public -P",
+    "copy:js": "find src -type f -name '*.js' -exec sh -c 'mkdir -p public/$(dirname ${1#src/}) && cp $1 public/${1#src/}' _ {} \\;",
+    "build": "npm run compile:pug && npm run copy:js",
+    "watch:pug": "pug -w src -o public -P"
   },
   "dependencies": {
     "pug": "^3.0.3",
@@ -9,7 +11,7 @@
   },
   "name": "dashboard",
   "version": "1.0.0",
-  "main": "compilePug.js",
+  "main": "src/compilePug.js",
   "devDependencies": {},
   "keywords": [],
   "author": "",
