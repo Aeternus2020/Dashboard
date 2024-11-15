@@ -1,7 +1,7 @@
 {
   "scripts": {
     "compile:pug": "pug src -o public -P",
-    "copy:js": "find src -type f -name '*.js' -exec sh -c 'mkdir -p public/$(dirname ${1#src/}) && cp $1 public/${1#src/}' _ {} \\;",
+    "copy:js": "find src -type f ! -name '*.pug' -exec sh -c 'mkdir -p public/$(dirname ${1#src/}) && cp $1 public/${1#src/}' _ {} \\;",
     "build": "npm run compile:pug && npm run copy:js",
     "watch:pug": "pug -w src -o public -P"
   },
