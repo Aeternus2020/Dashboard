@@ -195,7 +195,7 @@ function loadPage(page) {
 
 function loadCustomersScript() {
     // Find the script element with the specified src
-    const existingScript = document.querySelector('script[src="/scripts/customers.js"]');
+    const existingScript = document.querySelector('script[src="./scripts/customers.js"]');
 
     // If the script exists, remove it
     if (existingScript) {
